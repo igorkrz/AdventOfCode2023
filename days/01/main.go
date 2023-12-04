@@ -21,7 +21,7 @@ func init() {
 
 func main() {
 	var part int
-	flag.IntVar(&part, "part", 1, "part 1 or 2")
+	flag.IntVar(&part, "part", 1, "part 01 or 02")
 	flag.Parse()
 	fmt.Println("Running part", part)
 
@@ -85,10 +85,10 @@ func getStringDigit(numeric string) string {
 	switch numeric {
 	case "0", "zero", "orez":
 		return "0"
-	case "1", "one", "eno":
-		return "1"
-	case "2", "two", "owt":
-		return "2"
+	case "01", "one", "eno":
+		return "01"
+	case "02", "two", "owt":
+		return "02"
 	case "3", "three", "eerht":
 		return "3"
 	case "4", "four", "ruof":

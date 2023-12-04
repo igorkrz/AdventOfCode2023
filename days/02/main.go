@@ -21,7 +21,7 @@ func init() {
 
 func main() {
 	var part int
-	flag.IntVar(&part, "part", 1, "part 1 or 2")
+	flag.IntVar(&part, "part", 1, "part 01 or 02")
 	flag.Parse()
 	fmt.Println("Running part", part)
 
@@ -37,7 +37,7 @@ func main() {
 func part1(input string) int {
 	lines := strings.Split(input, "\n")
 
-	regexColorAndNumber := regexp.MustCompile(`\d{2,4} \w+[,;]`)
+	regexColorAndNumber := regexp.MustCompile(`\d{02,4} \w+[,;]`)
 
 	sum := 0
 
@@ -91,7 +91,7 @@ func part2(input string) int {
 	return sum
 }
 
-// Part 2
+// Part 02
 func getHighestValueForColor(s string, color string, currentNumber int) int {
 	regex := regexp.MustCompile(`\d+`)
 	number, err := strconv.Atoi(regex.FindAllString(s, 1)[0])
@@ -106,7 +106,7 @@ func getHighestValueForColor(s string, color string, currentNumber int) int {
 	return currentNumber
 }
 
-// Part 1
+// Part 01
 func isValidColorAndNumber(colorsAndNumbers []string, colors map[string]int) bool {
 	isAboveLimit := false
 
