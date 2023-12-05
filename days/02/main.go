@@ -4,6 +4,7 @@ import (
 	_ "embed"
 	"flag"
 	"fmt"
+	"github.com/igorkrz/AdventOfCode2023/utils"
 	"regexp"
 	"strconv"
 	"strings"
@@ -24,6 +25,8 @@ func main() {
 	flag.IntVar(&part, "part", 1, "part 01 or 02")
 	flag.Parse()
 	fmt.Println("Running part", part)
+
+	defer utils.Timer("day2 " + "part" + strconv.Itoa(part))()
 
 	if part == 1 {
 		ans := part1(input)
@@ -91,7 +94,7 @@ func part2(input string) int {
 	return sum
 }
 
-// Part 02
+// Part 2
 func getHighestValueForColor(s string, color string, currentNumber int) int {
 	regex := regexp.MustCompile(`\d+`)
 	number, err := strconv.Atoi(regex.FindAllString(s, 1)[0])
@@ -106,7 +109,7 @@ func getHighestValueForColor(s string, color string, currentNumber int) int {
 	return currentNumber
 }
 
-// Part 01
+// Part 1
 func isValidColorAndNumber(colorsAndNumbers []string, colors map[string]int) bool {
 	isAboveLimit := false
 

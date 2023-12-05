@@ -4,6 +4,7 @@ import (
 	_ "embed"
 	"flag"
 	"fmt"
+	"github.com/igorkrz/AdventOfCode2023/utils"
 	"regexp"
 	"strconv"
 	"strings"
@@ -26,6 +27,8 @@ func main() {
 	flag.IntVar(&part, "part", 1, "part 01 or 02")
 	flag.Parse()
 	fmt.Println("Running part", part)
+
+	defer utils.Timer("day3 " + "part" + strconv.Itoa(part))()
 
 	if part == 1 {
 		fmt.Println("Output:", part1())

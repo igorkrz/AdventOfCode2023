@@ -4,6 +4,7 @@ import (
 	_ "embed"
 	"flag"
 	"fmt"
+	"github.com/igorkrz/AdventOfCode2023/utils"
 	"regexp"
 	"strconv"
 	"strings"
@@ -24,6 +25,8 @@ func main() {
 	flag.IntVar(&part, "part", 1, "part 01 or 02")
 	flag.Parse()
 	fmt.Println("Running part", part)
+
+	defer utils.Timer("day1 " + "part" + strconv.Itoa(part))()
 
 	if part == 1 {
 		ans := part1(input)
@@ -85,10 +88,10 @@ func getStringDigit(numeric string) string {
 	switch numeric {
 	case "0", "zero", "orez":
 		return "0"
-	case "01", "one", "eno":
-		return "01"
-	case "02", "two", "owt":
-		return "02"
+	case "1", "one", "eno":
+		return "1"
+	case "2", "two", "owt":
+		return "2"
 	case "3", "three", "eerht":
 		return "3"
 	case "4", "four", "ruof":
