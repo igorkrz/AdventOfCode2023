@@ -38,7 +38,7 @@ func main() {
 	flag.Parse()
 	fmt.Println("Running part", part)
 
-	defer utils.Timer("day1 " + "part" + strconv.Itoa(part))()
+	defer utils.Timer("day5 " + "part" + strconv.Itoa(part))()
 
 	if part == 1 {
 		ans := part1(input)
@@ -55,6 +55,7 @@ func part1(input string) int {
 	var stepsToLocation [][]Triple
 
 	lines := strings.Split(input, "\n\n")
+
 	// Get seeds from the first line
 	seeds = convertToIntArray(regex.FindAllString(lines[0], -1))
 

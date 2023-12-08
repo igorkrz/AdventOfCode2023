@@ -40,7 +40,7 @@ func main() {
 func part1(input string) int {
 	lines := strings.Split(input, "\n")
 
-	regexColorAndNumber := regexp.MustCompile(`\d{02,4} \w+[,;]`)
+	regexColorAndNumber := regexp.MustCompile(`\d{2,4} \w+[,;]`)
 
 	sum := 0
 
