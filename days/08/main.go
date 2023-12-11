@@ -27,14 +27,14 @@ func init() {
 
 func main() {
 	var part int
-	flag.IntVar(&part, "part", 1, "part 01 or 02")
+	flag.IntVar(&part, "part", 1, "part 1 or 2")
 	flag.Parse()
 	fmt.Println("Running part", part)
 
-	defer utils.Timer("day7 " + "part" + strconv.Itoa(part))()
+	defer utils.Timer("day8 " + "part" + strconv.Itoa(part))()
 
 	if part == 1 {
-		ans := p1(input)
+		ans := part1(input)
 		fmt.Println("Output:", ans)
 	} else {
 		ans := part2(input)
@@ -42,7 +42,7 @@ func main() {
 	}
 }
 
-func p1(input string) int {
+func part1(input string) int {
 	lines := strings.Split(input, "\n\n")
 	instructions := strings.Trim(lines[0], " ")
 	network := strings.Split(lines[1], "\n")

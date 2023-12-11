@@ -25,7 +25,7 @@ func init() {
 
 func main() {
 	var part int
-	flag.IntVar(&part, "part", 1, "part 01 or 02")
+	flag.IntVar(&part, "part", 1, "part 1 or 2")
 	flag.Parse()
 	fmt.Println("Running part", part)
 
