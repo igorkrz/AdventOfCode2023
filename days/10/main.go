@@ -40,7 +40,7 @@ func main() {
 	flag.Parse()
 	fmt.Println("Running part", part)
 
-	defer utils.Timer("day9 " + "part" + strconv.Itoa(part))()
+	defer utils.Timer("day10 " + "part" + strconv.Itoa(part))()
 
 	if part == 1 {
 		ans := part1(input)
